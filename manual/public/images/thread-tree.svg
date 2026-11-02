@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320" role="img" aria-labelledby="title desc">
+  <title id="title">時系列とツリーの並び方</title>
+  <desc id="desc">時系列では1、2、3の順に並びます。ツリーでは1への返信である3を1の下にまとめます。</desc>
+  <rect width="800" height="320" rx="16" fill="#f3f7fb"/>
+  <g font-family="sans-serif" fill="#19334c">
+    <text x="32" y="40" font-size="21" font-weight="700">時系列</text>
+    <text x="432" y="40" font-size="21" font-weight="700">ツリー</text>
+    <g fill="#fff" stroke="#cddce9">
+      <rect x="24" y="60" width="350" height="64" rx="8"/>
+      <rect x="24" y="138" width="350" height="64" rx="8"/>
+      <rect x="24" y="216" width="350" height="64" rx="8"/>
+      <rect x="424" y="60" width="350" height="64" rx="8"/>
+      <rect x="456" y="138" width="318" height="64" rx="8"/>
+      <rect x="424" y="216" width="350" height="64" rx="8"/>
+    </g>
+    <g font-size="17">
+      <text x="42" y="88" fill="#186aa8">1</text><text x="76" y="100">おすすめの本を教えて</text>
+      <text x="42" y="166" fill="#186aa8">2</text><text x="76" y="178">今日はよく晴れました</text>
+      <text x="42" y="244" fill="#186aa8">3</text><text x="76" y="256">&gt;&gt;1　短編集はどうですか</text>
+      <text x="442" y="88" fill="#186aa8">1</text><text x="476" y="100">おすすめの本を教えて</text>
+      <text x="474" y="166" fill="#186aa8">3</text><text x="508" y="178">&gt;&gt;1　短編集はどうですか</text>
+      <text x="442" y="244" fill="#186aa8">2</text><text x="476" y="256">今日はよく晴れました</text>
+    </g>
+    <path d="M440 124v46h16" fill="none" stroke="#227bc4" stroke-width="3"/>
+    <text x="32" y="306" fill="#526a7e" font-size="13">並び方の説明図（実際の画面とは異なります）</text>
+  </g>
+</svg>
