@@ -36,13 +36,13 @@ export default defineConfig({
         "text": "マニュアル",
         "items": [
           {
-            "text": "はじめに",
+            "text": "マニュアル トップ",
             "link": "/"
           }
         ]
       },
       {
-        "text": "はじめに",
+        "text": "はじめる",
         "items": [
           {
             "text": "Sikiとは・基本用語",
@@ -199,7 +199,7 @@ export default defineConfig({
         "text": "困ったとき",
         "items": [
           {
-            "text": "困ったとき",
+            "text": "困ったときの入口",
             "link": "/troubleshooting/"
           },
           {
