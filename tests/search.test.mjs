@@ -15,7 +15,13 @@ const documents = await Promise.all([
   ['posting', 'basics/posting.md'],
   ['log-search', 'features/log-search.md'],
   ['backup', 'troubleshooting/backup.md'],
-  ['from-previous', 'migration/from-previous.md']
+  ['from-previous', 'migration/from-previous.md'],
+  ['response-skins', 'customization/response-skins.md'],
+  ['ai', 'features/ai.md'],
+  ['keyboard', 'customization/keyboard.md'],
+  ['workspaces', 'features/workspaces.md'],
+  ['media-url-rules', 'reference/media-url-rules.md'],
+  ['user-commands', 'customization/user-commands.md']
 ].map(async ([id, file]) => {
   const source = await fs.readFile(new URL(`../manual/${file}`, import.meta.url), 'utf8')
   return { id, text: parser.render(source.replace(/^---[\s\S]*?---/, '')).replace(/<[^>]+>/g, ' ') }
@@ -28,7 +34,10 @@ for (const [query, expected] of [
   ['共通設定', 'settings'], ['上書き 解除', 'settings'], ['既読', 'threads'],
   ['返信 ツリー', 'threads'], ['ＮＧ', 'ng-and-mute'],
   ['ポータブル', 'install'], ['初期設定', 'first-launch'], ['sage', 'posting'],
-  ['保存ログ', 'log-search'], ['復元', 'backup'], ['SQLite', 'from-previous']
+  ['保存ログ', 'log-search'], ['復元', 'backup'], ['SQLite', 'from-previous'],
+  ['レススキン', 'response-skins'], ['全体要約', 'ai'],
+  ['ショートカット 追加', 'keyboard'], ['共通レイアウト', 'workspaces'],
+  ['ImageViewURLReplace', 'media-url-rules'], ['シーケンス', 'user-commands']
 ]) {
   test(`「${query}」で${expected}を探せる`, () => {
     assert.ok(search.search(query).some(result => result.id === expected))

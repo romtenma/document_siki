@@ -20,7 +20,7 @@ const manualPages = await Promise.all((await findPages(manualRoot)).map(async fi
 }))
 
 test('サブパスから各ページを直接開き、画像と関連リンクをたどれる', async ({ page }) => {
-  test.setTimeout(60_000)
+  test.setTimeout(120_000)
   const errors = []
   page.on('pageerror', error => errors.push(error.message))
   page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`) })
@@ -55,6 +55,10 @@ test('日本語・半角カナ・全角英字・複数語から見出しを検�
     ,['スレッド 作成', '/basics/posting.html#']
     ,['バックアップ', '/troubleshooting/backup.html#']
     ,['保存ログ', '/features/log-search.html#']
+    ,['レススキン', '/customization/response-skins.html#']
+    ,['全体要約', '/features/ai.html#']
+    ,['ショートカット 追加', '/customization/keyboard.html#']
+    ,['ImageViewURLReplace', '/reference/media-url-rules.html#']
   ]) {
     await page.getByRole('button', { name: 'マニュアルを検索', exact: true }).click()
     await page.locator('#localsearch-input').fill(query)
@@ -82,7 +86,7 @@ test('検索をキーボードで開き、結果を選んで本文へ移動で�
 })
 
 test('通常幅と狭い画面幅で横にはみ出さず、目次と図を読める', async ({ page }) => {
-  test.setTimeout(60_000)
+  test.setTimeout(120_000)
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 1000 })
     for (const { url } of manualPages) {
@@ -94,6 +98,14 @@ test('通常幅と狭い画面幅で横にはみ出さず、目次と図を読�
     await page.screenshot({ path: `verification-output/settings-${width}.png` })
     await page.goto('getting-started/install.html')
     await page.screenshot({ path: `verification-output/install-${width}.png` })
+    await page.goto('reference/settings.html#settings-common')
+    await page.locator('#settings-common').scrollIntoViewIfNeeded()
+    await page.screenshot({ path: `verification-output/reference-settings-${width}.png` })
+    await page.goto('reference/commands.html#commands-search')
+    await page.locator('#commands-search').scrollIntoViewIfNeeded()
+    await page.screenshot({ path: `verification-output/reference-commands-${width}.png` })
+    await page.goto('customization/response-skins.html')
+    await page.screenshot({ path: `verification-output/response-skins-${width}.png` })
   }
   await page.getByRole('button', { name: '目次', exact: true }).click()
   await page.locator('.VPSidebar').getByRole('link', { name: 'スレッドを読む', exact: true }).click()
@@ -104,7 +116,7 @@ test('通常幅と狭い画面幅で横にはみ出さず、目次と図を読�
 })
 
 test('編集資料と未作成ページを配信せず、404から入口へ戻れる', async ({ page, request }) => {
-  for (const url of ['planning/source-map.md', '../planning/source-map.md', 'customization/themes.html']) {
+  for (const url of ['planning/source-map.md', '../planning/source-map.md', 'customization/not-a-page.html']) {
     const response = await request.get(url)
     expect(response.status()).toBe(404)
     expect(await response.text()).not.toContain('M01')

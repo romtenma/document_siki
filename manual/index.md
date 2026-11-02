@@ -38,10 +38,22 @@ features:
     details: 表示・取得・更新の問題を確認し、バックアップとデータの互換性を調べます。
     link: /troubleshooting/
     linkText: 症状から確認する
+  - title: 用途ごとに使い分ける
+    details: ワークスペースや実況、画像アップロード、AIなど、目的に合った機能を使います。
+    link: /features/workspaces
+    linkText: ワークスペースを使う
+  - title: 表示と操作を調整する
+    details: テーマとレススキン、キーやジェスチャーの割り当てを調整します。
+    link: /customization/response-skins
+    linkText: レススキンを編集する
+  - title: 設定とコマンドを調べる
+    details: 操作の名前とID、設定項目の説明・保存先、起動オプションを調べます。
+    link: /reference/commands
+    linkText: コマンド一覧を見る
 ---
 
 <div class="home-note">
 
-**1.0.0に向けて整備中です。** 導入・基本操作・主要な設定と対処を先行して掲載しています。旧版からの更新は[移行ガイド](/migration/from-previous)から、掲載前の詳細は[既存の公式マニュアル](https://sikiapp.net/manual/)も参照できます。旧版の説明は、新しい画面と異なる場合があります。
+**1.0.0に向けて整備中です。** 導入・基本操作・機能別の説明・カスタマイズ・参照資料の原稿を掲載しています。正式版での手順確認はこれからです。旧版からの更新は[移行ガイド](/migration/from-previous)から確認できます。[既存の公式マニュアル](https://sikiapp.net/manual/)の説明は、新しい画面と異なる場合があります。
 
 </div>

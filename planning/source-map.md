@@ -149,6 +149,14 @@ MenuBarから主なページを抽出した候補表です。「入口確認」�
 | N12 | 同期・廃止機能：`manual/features/sync.md`、`manual/migration/from-previous.md` | M04、`src/js/main/nnc/sync2chnode.ts`、`src/js/main/nnc/sync.ts` | 仕様確認待ち。Sync2chの利用条件。bbsyncやプロキシボードを計画書だけで利用可能としない |
 | N13 | 設定とコマンドの参照：`manual/reference/settings.md`、`manual/reference/commands.md` | `src/js/main/nnc/defaults/settings.default.ts`、`src/js/common/settingsLabels.ts`、`src/js/render/constants/commandDetails.ts`、`src/js/render/constants/commandMap.ts` | 新規。意味・既定値・適用範囲の定義を照合し、自動生成できる範囲と手書きの説明を分ける |
 
+## 詳細原稿の進捗
+
+目次案の全50候補に本文を配置しました。機能別・カスタマイズ・移行・参照資料の24ページを追加した範囲は[詳細原稿の整備結果](detail-guide-results.md)、根拠と未確認事項は[確認記録](verification/detail-guide.md)を参照してください。既存の資料IDを基準に、旧版と現行定義の差を確認して書き直しています。
+
+N13の参照資料は `commandDetails.ts`、`settingsContents2.tsx`、`sitePreferences.ts` の静的メタデータを抽出しました。保存済み・継承済みの有効値や、コマンドの引数型・順序を検証済みとするものではありません。入力ファイルのハッシュと件数は [reference-snapshot.json](reference-snapshot.json) に記録しています。
+
+N12の同期は接続・同期対象・自動実行の定義を照合しましたが、外部サービスとの実通信は未確認です。画像URL補正は旧資料の正規表現の説明と現行のエスケープ処理に再確認が必要で、動作サンプルの転載は保留しています。
+
 ## 執筆時に更新する記録
 
 この表は資料の入口と行き先を管理します。ページ単位の確認版・環境・操作・未解決事項は、[雛形](page-template.md)に従う検証記録へ残します。資料に未掲載の機能やWikiの配下ページを見つけたら、IDを追加して対応先を記録します。

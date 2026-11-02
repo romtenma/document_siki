@@ -93,23 +93,61 @@ export default defineConfig({
       },
       {
         "text": "便利に使う",
+        "collapsed": false,
         "items": [
           {
             "text": "お気に入り",
             "link": "/features/bookmarks"
           },
           {
+            "text": "ワークスペース",
+            "link": "/features/workspaces"
+          },
+          {
             "text": "NG・強調・ミュート・マーク",
             "link": "/features/ng-and-mute"
           },
           {
+            "text": "フィルターとミニマップ",
+            "link": "/features/filters-and-minimap"
+          },
+          {
             "text": "保存ログ検索",
             "link": "/features/log-search"
+          },
+          {
+            "text": "自動更新と実況",
+            "link": "/features/live"
+          },
+          {
+            "text": "画像のアップロード・編集",
+            "link": "/features/uploads"
+          },
+          {
+            "text": "ローカル板",
+            "link": "/features/local-boards"
+          },
+          {
+            "text": "ブラウザビュー",
+            "link": "/features/browser"
+          },
+          {
+            "text": "AIサイドパネル",
+            "link": "/features/ai"
+          },
+          {
+            "text": "同期",
+            "link": "/features/sync"
+          },
+          {
+            "text": "コマンドパレット",
+            "link": "/features/command-palette"
           }
         ]
       },
       {
         "text": "設定・カスタマイズ",
+        "collapsed": false,
         "items": [
           {
             "text": "設定の探し方と適用範囲",
@@ -118,6 +156,42 @@ export default defineConfig({
           {
             "text": "レイアウト",
             "link": "/customization/layout"
+          },
+          {
+            "text": "テーマ・配色・背景",
+            "link": "/customization/themes"
+          },
+          {
+            "text": "レススキン",
+            "link": "/customization/response-skins"
+          },
+          {
+            "text": "キーボードショートカット",
+            "link": "/customization/keyboard"
+          },
+          {
+            "text": "マウスジェスチャー",
+            "link": "/customization/mouse"
+          },
+          {
+            "text": "ホイールジェスチャー",
+            "link": "/customization/wheel"
+          },
+          {
+            "text": "クリック・ドラッグ・パネルの操作",
+            "link": "/customization/actions"
+          },
+          {
+            "text": "ユーザーコマンド",
+            "link": "/customization/user-commands"
+          },
+          {
+            "text": "プラグインを使う",
+            "link": "/customization/plugins"
+          },
+          {
+            "text": "カスタムCSS",
+            "link": "/customization/css"
           }
         ]
       },
@@ -125,7 +199,7 @@ export default defineConfig({
         "text": "困ったとき",
         "items": [
           {
-            "text": "困ったときの入口",
+            "text": "困ったとき",
             "link": "/troubleshooting/"
           },
           {
@@ -155,19 +229,49 @@ export default defineConfig({
         ]
       },
       {
-        "text": "移行・リファレンス",
+        "text": "移行ガイド",
         "items": [
           {
             "text": "旧バージョンから1.0.0へ",
             "link": "/migration/from-previous"
           },
           {
+            "text": "別のPC・OSへの移行",
+            "link": "/migration/move-data"
+          }
+        ]
+      },
+      {
+        "text": "リファレンス",
+        "collapsed": false,
+        "items": [
+          {
+            "text": "対応サイトと制限",
+            "link": "/reference/supported-sites"
+          },
+          {
             "text": "保存先とファイル構成",
             "link": "/reference/data-locations"
           },
           {
-            "text": "対応サイトと制限",
-            "link": "/reference/supported-sites"
+            "text": "起動オプション・ポータブルモード",
+            "link": "/reference/command-line"
+          },
+          {
+            "text": "コマンド一覧",
+            "link": "/reference/commands"
+          },
+          {
+            "text": "設定リファレンス",
+            "link": "/reference/settings"
+          },
+          {
+            "text": "外部ツールとの連携",
+            "link": "/reference/external-integration"
+          },
+          {
+            "text": "画像URLの補正",
+            "link": "/reference/media-url-rules"
           }
         ]
       }

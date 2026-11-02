@@ -2,7 +2,7 @@
 
 Siki 1.0.0向けの日本語マニュアルを管理する専用リポジトリです。公開先はGitHub Pagesとし、マニュアルの原稿・構成・公開設定の正本をここに集約します。
 
-現在はトップを含む26ページの先行原稿を整備しています。導入・基本操作・主要設定・バックアップ・旧版からの移行・対処の流れを掲載しています。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesへのデプロイはまだ有効にしていません。
+現在はトップを含む50ページの原稿を整備しています。導入・基本操作に加え、機能別の説明、カスタマイズ、移行・対処、設定・コマンドの参照資料を掲載しています。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesへのデプロイはまだ有効にしていません。
 
 ## 決定済みの方針
 
@@ -60,8 +60,11 @@ npm run docs:build
 | 日本語検索をテスト | `npm test` |
 | 原稿検査・検索テスト・ビルド | `npm run verify` |
 | 実ブラウザでサブパス・検索・画面幅を検査 | `npm run test:browser` |
+| アプリの定義から参照資料を更新（編集時のみ） | `node scripts/import-source-reference.mjs ../Siki` |
 
 ブラウザ検査はビルド後に実行します。Windowsではインストール済みMicrosoft Edgeを、その他の環境ではPlaywrightのChromiumを使います。Chromiumがない環境では、先に `npx playwright install chromium` を実行します。既定の検査用ポート4173を使用します。`MANUAL_BROWSER_CHANNEL=chrome` などでブラウザを指定することもできます。
+
+参照資料の更新には、アプリ側のチェックアウトと、その開発環境にある `@babel/parser` が必要です。抽出範囲・除外・初期値の扱いは[詳細原稿の整備結果](planning/detail-guide-results.md)を確認してください。通常のビルド・検査はアプリ側に依存しません。
 
 ブラウザ検査は明るい表示1種類、1440pxと390pxの幅で全ページを確認します。テスト自身がポート4173のVitePressプレビューを起動・終了します。先に同じポートで起動しているプレビューは終了してください。結果の画面画像は `verification-output/` に保存し、Git管理から除外します。GitHub Actionsの `Check manual` は原稿検査・検索テスト・ビルドを行います。ブラウザ検査とPagesへの配置は自動実行しません。
 
@@ -77,9 +80,10 @@ npm run docs:build
 | [作業・公開計画](planning/rollout.md) | 工程、試作の確認項目、GitHub Pagesへの移行と更新 |
 | [ページの雛形](planning/page-template.md) | 操作説明の基本構成と検証記録の例 |
 | [試作の検証結果](planning/prototype-results.md) | 最初の代表3ページの試作記録 |
-| [先行原稿の整備結果](planning/core-guide-results.md) | 26ページの構成、確認範囲と次の工程 |
+| [先行原稿の整備結果](planning/core-guide-results.md) | 導入・基本操作の整備時点の記録 |
+| [詳細原稿の整備結果](planning/detail-guide-results.md) | 50ページの構成、参照資料の更新方法、確認範囲 |
 
-`planning/` は編集・制作のための資料です。公開サイトのビルド対象は `manual/` のみです。目次にある未着手ページのパスは配置案であり、サイトには未作成ページへのリンクを置いていません。
+`planning/` は編集・制作のための資料です。公開サイトのビルド対象は `manual/` のみです。目次案の全50候補に本文があり、未作成ページへのリンクを置いていません。掲載原稿の操作確認は継続中です。
 
 ## 参照元
 
@@ -92,4 +96,4 @@ npm run docs:build
 
 調査基準日は2026-11-02です。確認時のアプリは0.99.25です。1.0.0の実機確認を済ませたことを示すものではありません。
 
-次の工程は機能別・カスタマイズの詳細整備と、原稿に記載した操作の検証です。先行原稿の確認範囲は [先行原稿の整備結果](planning/core-guide-results.md) を参照してください。確認した条件は [planning/verification/](planning/verification/) に記録します。具体的な工程は[作業・公開計画](planning/rollout.md)を参照してください。
+次の工程は各手順・保存・解除・復元の実機確認と、1.0.0に向けた仕様の再照合です。現在の掲載範囲と参照資料の更新方法は [詳細原稿の整備結果](planning/detail-guide-results.md) を参照してください。確認した条件は [planning/verification/](planning/verification/) に記録します。具体的な工程は[作業・公開計画](planning/rollout.md)を参照してください。

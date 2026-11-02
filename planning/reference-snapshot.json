@@ -1,0 +1,12 @@
+{
+  "sourceVersion": "0.99.25",
+  "inputs": {
+    "src/js/render/constants/commandDetails.ts": "70929c7fae6e8ba1fb55fda0e0c41f18c695e1ac2a2341a685a1c7313471f235",
+    "src/js/common/settingsContents2.tsx": "9bc1f88bfe7fa4e5c571dc08c7873460d6d999b1fe29c85971a9240e5b15e097",
+    "src/js/common/sitePreferences.ts": "bac3e1d2fd7dd3a88ea0e35eadb4f9f00344887d73f79661793afeda13c6c0c2"
+  },
+  "commands": 812,
+  "settings": 428,
+  "omittedConditionalSettings": 25,
+  "policy": "AST literal metadata only; no app evaluation; no runtime extensions; formDefault is not effective default; formal 1.0.0 verification pending"
+}
