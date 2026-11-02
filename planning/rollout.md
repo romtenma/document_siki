@@ -51,16 +51,16 @@ VitePressにはブラウザ内の全文検索とGitHub Pages向けの公開手�
 
 工程5に向けた準備版の操作確認は[ローカル操作の実機確認](verification/local-operations.md)に記録しています。キー・ワークスペース・レススキン・ローカル板の確認を進めましたが、正式版と各OS、外部サービスの確認は未完了です。
 
-本文の確認後に公開可能な成果物を作り、GitHub ActionsからGitHub Pagesへ配置する構成を予定します。独自ドメインは必須にせず、まず確定したリポジトリのPages URLで動作を確認します。
+GitHub ActionsからGitHub Pagesへ配置するワークフローを用意しました。リポジトリは https://github.com/romtenma/document_siki 、公開先は https://romtenma.github.io/document_siki/ です。独自ドメインは使用しません。1.0.0での最終確認が完了するまでは、作成中の表記と `noindex, nofollow` を維持して公開します。
 
-1. GitHub上のowner・リポジトリURL・可視性・公開ブランチを確認し、ローカルのリモートを設定します。現状はローカルの `main` ブランチのみで、リモートは未設定です。
+1. ownerは `romtenma`、リポジトリ名は `document_siki`、可視性はPublic、公開ブランチは `main` です。ローカルの `origin` に同リポジトリを設定しました。baseパスは `/document_siki/` です。
 2. Pagesの公開元にGitHub Actionsを指定します。
 3. PRでは依存のインストール、原稿の検査、内部リンクと画像参照の検査、サイトビルドを行います。PRのビルド成功だけでは公開しません。
-4. 公開開始後は `main` の変更を同じ手順で検査・ビルドし、成功した成果物だけを `github-pages` 環境へ配置します。準備中の試作を正式マニュアルとして自動公開しないよう、公開開始までデプロイを有効にしません。
+4. `.github/workflows/deploy.yml` は `main` へのpushまたは手動実行で検査・ビルドし、成功した成果物だけを `github-pages` 環境へ配置します。公開対象は `manual/.vitepress/dist/` のみです。準備版の公開と正式版での確認完了を区別し、確認前に作成中の表記を削除しません。
 5. 公開ジョブに必要な `pages: write` と `id-token: write`、環境と同時実行制御を設定します。ビルドジョブと公開ジョブを分け、PRに公開権限を与えません。
 6. 公開されたページの直接アクセス、画像、検索、404時の案内を確認します。
 
-Actionsによるビルド・成果物アップロード・デプロイの構成は、[GitHubの公式手順](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)に従います（参照日：2026-11-02）。Actionの具体的なリビジョンは実装時に確認して固定します。
+Actionsによるビルド・成果物アップロード・デプロイの構成は、[GitHubの公式手順](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)に従います（参照日：2026-11-02）。使用するActionは公式リポジトリでリビジョンを確認し、コミットSHAに固定しました。
 
 PRごとのブラウザプレビューを別サービスで自動公開する構成は初期段階では設けません。ローカルプレビューとCIの検査結果を使います。
 
@@ -82,8 +82,8 @@ PRごとのブラウザプレビューを別サービスで自動公開する構
 
 | 事項 | 現状・扱い |
 | --- | --- |
-| GitHub上のリポジトリURLとowner | 未設定。ローカル試作は先に進められる |
-| 公開URLと独自ドメイン | 未定。公開用のbaseパスはリポジトリ確定後に決める |
+| GitHub上のリポジトリURLとowner | `romtenma/document_siki`（Public）、`origin`を設定済み |
+| 公開URLと独自ドメイン | `https://romtenma.github.io/document_siki/`、baseは `/document_siki/`、独自ドメインなし |
 | VitePressの採用 | 1.6.4を採用。試作結果と今後の更新方針を記録済み |
 | 1.0.0の最終仕様 | 準備版で執筆し、変更追跡と正式版での再確認を行う |
 | OS別の操作確認環境 | 執筆対象ごとに確認できた環境と未確認範囲を記録する |

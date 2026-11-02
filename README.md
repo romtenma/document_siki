@@ -6,7 +6,7 @@
 
 Siki 1.0.0向けの日本語マニュアルを管理する専用リポジトリです。公開先はGitHub Pagesとし、マニュアルの原稿・構成・公開設定の正本をここに集約します。
 
-現在はトップを含む50ページの原稿を整備しています。導入・基本操作に加え、機能別の説明、カスタマイズ、移行・対処、設定・コマンドの参照資料を掲載しています。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesへのデプロイはまだ有効にしていません。
+現在はトップを含む50ページの原稿を整備しています。導入・基本操作に加え、機能別の説明、カスタマイズ、移行・対処、設定・コマンドの参照資料を掲載しています。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesの公開先は https://romtenma.github.io/document_siki/ です。作成中のマニュアルとして公開するワークフローを用意しています。
 
 ## 決定済みの方針
 
@@ -33,7 +33,7 @@ npm run verify
 npm run docs:preview
 ```
 
-プレビューの既定URLは `http://localhost:4173/document_siki/` です。公開先を変更する場合は、ビルド時と起動時に同じ `MANUAL_BASE_PATH` を指定します。値は `/` または `/リポジトリ名/` の形式です。独自ドメインやGitHub上のownerは設定していません。
+プレビューの既定URLは `http://localhost:4173/document_siki/` です。公開先を変更する場合は、ビルド時と起動時に同じ `MANUAL_BASE_PATH` を指定します。値は `/` または `/リポジトリ名/` の形式です。GitHub上のリポジトリは [romtenma/document_siki](https://github.com/romtenma/document_siki) で、独自ドメインは使用しません。
 
 Windows PowerShellでルート配信を確認する例：
 
@@ -70,7 +70,15 @@ npm run docs:build
 
 参照資料の更新には、アプリ側のチェックアウトと、その開発環境にある `@babel/parser` が必要です。抽出範囲・除外・初期値の扱いは[詳細原稿の整備結果](planning/detail-guide-results.md)を確認してください。通常のビルド・検査はアプリ側に依存しません。
 
-ブラウザ検査は明るい表示1種類、1440pxと390pxの幅で全ページを確認します。テスト自身がポート4173のVitePressプレビューを起動・終了します。先に同じポートで起動しているプレビューは終了してください。結果の画面画像は `verification-output/` に保存し、Git管理から除外します。GitHub Actionsの `Check manual` は原稿検査・検索テスト・ビルドを行います。ブラウザ検査とPagesへの配置は自動実行しません。
+ブラウザ検査は明るい表示1種類、1440pxと390pxの幅で全ページを確認します。テスト自身がポート4173のVitePressプレビューを起動・終了します。先に同じポートで起動しているプレビューは終了してください。結果の画面画像は `verification-output/` に保存し、Git管理から除外します。GitHub Actionsの `Check manual` は原稿検査・検索テスト・ビルドを行います。ブラウザ検査はローカルで実行します。
+
+## GitHub Pagesへ公開する
+
+GitHubの Settings → Pages → Build and deployment → Source で `GitHub Actions` を指定します。公開ブランチは `main`、公開URLは https://romtenma.github.io/document_siki/ です。
+
+`.github/workflows/deploy.yml` の `Deploy manual` は、`main` へのpushまたはActionsからの手動実行で動作します。`npm ci` と `npm run verify` に成功した場合だけ、`manual/.vitepress/dist/` を `github-pages` 環境へ配置します。PRでは `Check manual` による検査のみを行い、公開しません。
+
+更新時は原稿を編集し、`npm run verify` と必要に応じて `npm run test:browser` を実行してから `main` に反映します。Actionsの成功後、公開サイトの直接アクセス・画像・日本語検索を確認します。公開内容に問題があれば、原因の変更を修正またはrevertして `main` に反映し、再デプロイします。
 
 試作中は検索エンジン向けに `noindex, nofollow` を指定しています。正式公開時に、原稿と公開URLの確認と合わせて見直します。
 
