@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">Sikiの画面構成の説明図</title>
+  <desc id="desc">上部にメニューとURL欄、左にサイドパネル、中央に板のスレッド一覧とレス本文、下部に書き込み欄とワークスペースがあります。</desc>
+  <rect width="800" height="460" rx="16" fill="#f3f7fb"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#19334c" font-size="20">
+    <g fill="#fff" stroke="#cddce9" stroke-width="2">
+      <rect x="24" y="24" width="752" height="52" rx="8"/>
+      <rect x="24" y="90" width="174" height="288" rx="8"/>
+      <rect x="212" y="90" width="230" height="288" rx="8"/>
+      <rect x="456" y="90" width="320" height="192" rx="8"/>
+      <rect x="456" y="296" width="320" height="82" rx="8"/>
+      <rect x="24" y="392" width="752" height="44" rx="8"/>
+    </g>
+    <text x="400" y="58">メニュー・URL入力欄・レイアウト操作</text>
+    <text x="111" y="206">サイドパネル</text><text x="111" y="240" font-size="16">BBSMenu</text><text x="111" y="270" font-size="16">お気に入り・履歴</text>
+    <text x="327" y="218">板</text><text x="327" y="252" font-size="16">スレッド一覧</text>
+    <text x="616" y="170">スレッド</text><text x="616" y="204" font-size="16">レスの本文</text>
+    <text x="616" y="345">書き込み欄</text><text x="400" y="421">ワークスペース・状態表示</text>
+  </g>
+</svg>

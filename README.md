@@ -2,7 +2,7 @@
 
 Siki 1.0.0向けの日本語マニュアルを管理する専用リポジトリです。公開先はGitHub Pagesとし、マニュアルの原稿・構成・公開設定の正本をここに集約します。
 
-現在は代表3ページと最小限のナビゲーションを備えた試作です。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesへのデプロイはまだ有効にしていません。
+現在はトップを含む26ページの先行原稿を整備しています。導入・基本操作・主要設定・バックアップ・旧版からの移行・対処の流れを掲載しています。VitePress 1.6.4で表示・日本語検索・サブパスを検証しました。原稿は0.99.25の画面と実装を参照して整備中で、1.0.0での最終確認はこれからです。GitHub Pagesへのデプロイはまだ有効にしていません。
 
 ## 決定済みの方針
 
@@ -50,6 +50,9 @@ npm run docs:build
 
 | 作業 | コマンド・場所 |
 | --- | --- |
+| 初めて使う | [導入・基本用語](manual/getting-started/overview.md) |
+| 板を開く・投稿する | [板](manual/basics/boards.md)・[書き込み](manual/basics/posting.md) |
+| バックアップ・旧版からの移行 | [バックアップ](manual/troubleshooting/backup.md)・[移行](manual/migration/from-previous.md) |
 | スレッドを読む | [原稿](manual/basics/threads.md) |
 | 設定の探し方と適用範囲 | [原稿](manual/customization/settings.md) |
 | NG・強調・ミュート・マーク | [原稿](manual/features/ng-and-mute.md) |
@@ -60,7 +63,7 @@ npm run docs:build
 
 ブラウザ検査はビルド後に実行します。Windowsではインストール済みMicrosoft Edgeを、その他の環境ではPlaywrightのChromiumを使います。Chromiumがない環境では、先に `npx playwright install chromium` を実行します。既定の検査用ポート4173を使用します。`MANUAL_BROWSER_CHANNEL=chrome` などでブラウザを指定することもできます。
 
-ブラウザ検査は明るい表示1種類、1440pxと390pxの幅で行います。結果の画面画像は `verification-output/` に保存し、Git管理から除外します。GitHub Actionsの `Check manual` は原稿検査・検索テスト・ビルドを行います。ブラウザ検査とPagesへの配置は自動実行しません。
+ブラウザ検査は明るい表示1種類、1440pxと390pxの幅で全ページを確認します。テスト自身がポート4173のVitePressプレビューを起動・終了します。先に同じポートで起動しているプレビューは終了してください。結果の画面画像は `verification-output/` に保存し、Git管理から除外します。GitHub Actionsの `Check manual` は原稿検査・検索テスト・ビルドを行います。ブラウザ検査とPagesへの配置は自動実行しません。
 
 試作中は検索エンジン向けに `noindex, nofollow` を指定しています。正式公開時に、原稿と公開URLの確認と合わせて見直します。
 
@@ -73,7 +76,8 @@ npm run docs:build
 | [既存資料との対応表](planning/source-map.md) | 旧公式資料・アプリ内原稿・Wikiと新版の対応 |
 | [作業・公開計画](planning/rollout.md) | 工程、試作の確認項目、GitHub Pagesへの移行と更新 |
 | [ページの雛形](planning/page-template.md) | 操作説明の基本構成と検証記録の例 |
-| [試作の検証結果](planning/prototype-results.md) | 採用基盤、日本語検索・表示・URLの検証結果と残る確認 |
+| [試作の検証結果](planning/prototype-results.md) | 最初の代表3ページの試作記録 |
+| [先行原稿の整備結果](planning/core-guide-results.md) | 26ページの構成、確認範囲と次の工程 |
 
 `planning/` は編集・制作のための資料です。公開サイトのビルド対象は `manual/` のみです。目次にある未着手ページのパスは配置案であり、サイトには未作成ページへのリンクを置いていません。
 
@@ -88,4 +92,4 @@ npm run docs:build
 
 調査基準日は2026-11-02です。確認時のアプリは0.99.25です。1.0.0の実機確認を済ませたことを示すものではありません。
 
-次の工程は導入から基本操作までの先行原稿の整備と、既存3ページで未確認の保存・反映・解除操作の検証です。確認した条件は [planning/verification/](planning/verification/) に記録します。具体的な工程は[作業・公開計画](planning/rollout.md)を参照してください。
+次の工程は機能別・カスタマイズの詳細整備と、原稿に記載した操作の検証です。先行原稿の確認範囲は [先行原稿の整備結果](planning/core-guide-results.md) を参照してください。確認した条件は [planning/verification/](planning/verification/) に記録します。具体的な工程は[作業・公開計画](planning/rollout.md)を参照してください。

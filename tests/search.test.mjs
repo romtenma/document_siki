@@ -9,7 +9,13 @@ const parser = new MarkdownIt()
 const documents = await Promise.all([
   ['threads', 'basics/threads.md'],
   ['settings', 'customization/settings.md'],
-  ['ng-and-mute', 'features/ng-and-mute.md']
+  ['ng-and-mute', 'features/ng-and-mute.md'],
+  ['install', 'getting-started/install.md'],
+  ['first-launch', 'getting-started/first-launch.md'],
+  ['posting', 'basics/posting.md'],
+  ['log-search', 'features/log-search.md'],
+  ['backup', 'troubleshooting/backup.md'],
+  ['from-previous', 'migration/from-previous.md']
 ].map(async ([id, file]) => {
   const source = await fs.readFile(new URL(`../manual/${file}`, import.meta.url), 'utf8')
   return { id, text: parser.render(source.replace(/^---[\s\S]*?---/, '')).replace(/<[^>]+>/g, ' ') }
@@ -20,7 +26,9 @@ search.addAll(documents)
 for (const [query, expected] of [
   ['ミュート', 'ng-and-mute'], ['ﾐｭｰﾄ', 'ng-and-mute'], ['ミュー', 'ng-and-mute'],
   ['共通設定', 'settings'], ['上書き 解除', 'settings'], ['既読', 'threads'],
-  ['返信 ツリー', 'threads'], ['ＮＧ', 'ng-and-mute']
+  ['返信 ツリー', 'threads'], ['ＮＧ', 'ng-and-mute'],
+  ['ポータブル', 'install'], ['初期設定', 'first-launch'], ['sage', 'posting'],
+  ['保存ログ', 'log-search'], ['復元', 'backup'], ['SQLite', 'from-previous']
 ]) {
   test(`「${query}」で${expected}を探せる`, () => {
     assert.ok(search.search(query).some(result => result.id === expected))

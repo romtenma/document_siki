@@ -6,6 +6,7 @@ export default defineConfig({
   workers: 1,
   reporter: 'list',
   outputDir: 'verification-output/browser',
+  globalSetup: './browser-tests/preview-setup.mjs',
   use: {
     baseURL: 'http://127.0.0.1:4173/document_siki/',
     channel: process.env.MANUAL_BROWSER_CHANNEL || (process.platform === 'win32' ? 'msedge' : undefined),
@@ -13,11 +14,5 @@ export default defineConfig({
     colorScheme: 'light',
     locale: 'ja-JP',
     screenshot: 'only-on-failure'
-  },
-  webServer: {
-    command: 'npm run docs:preview -- --port 4173 --strictPort',
-    url: 'http://127.0.0.1:4173/document_siki/',
-    reuseExistingServer: !process.env.CI,
-    timeout: 30_000
   }
 })
