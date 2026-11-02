@@ -5,5 +5,6 @@ manual/.vitepress/.temp/
 verification-output/
 test-results/
 playwright-report/
+private/
 .DS_Store
 npm-debug.log*

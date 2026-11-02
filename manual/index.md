@@ -6,6 +6,10 @@ hero:
   name: Siki マニュアル
   text: 読む、探す。<br>自分の使い方に合わせる。
   tagline: Siki 1.0.0の操作ガイド。掲示板を読むときの基本から、表示や設定の使い分けまで、目的に合わせて調べられます。
+  image:
+    light: /images/siki-wordmark-stacked.svg
+    dark: /images/siki-wordmark-stacked-white.svg
+    alt: Siki
   actions:
     - theme: brand
       text: 初めて使う

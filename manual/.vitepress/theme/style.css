@@ -23,6 +23,7 @@
 .vp-doc table { font-size: 14px; line-height: 1.8; }
 .vp-doc th { white-space: nowrap; }
 .vp-doc img { border-radius: 10px; }
+.vp-doc img[src*="wordmark"] { max-width: 420px; width: 100%; margin: 20px auto 28px; display: block; border-radius: 0; }
 .vp-doc .custom-block { line-height: 1.85; }
 .manual-status { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 22px; color: var(--vp-c-text-2); font-size: 12px; }
 .manual-status span { padding: 3px 10px; border: 1px solid var(--vp-c-divider); border-radius: 6px; color: var(--vp-c-brand-1); font-weight: 600; }

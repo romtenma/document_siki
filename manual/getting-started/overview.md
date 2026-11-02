@@ -5,6 +5,8 @@ description: Sikiの役割と、サイト・板・スレッド・レス・タブ
 
 # Sikiとは・基本用語
 
+![Sikiのワードマーク](/images/siki-wordmark-blue.svg)
+
 Sikiは、複数の掲示板を共通の画面で読むためのデスクトップアプリです。Windows・macOS・Linuxで利用でき、対応するサイトでは書き込みもできます。
 
 ## 最初に覚える用語 {#terms}

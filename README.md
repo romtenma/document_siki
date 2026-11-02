@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="manual/public/images/siki-wordmark-blue.svg" alt="Siki" width="380">
+</p>
+
 # Siki マニュアル
 
 Siki 1.0.0向けの日本語マニュアルを管理する専用リポジトリです。公開先はGitHub Pagesとし、マニュアルの原稿・構成・公開設定の正本をここに集約します。
