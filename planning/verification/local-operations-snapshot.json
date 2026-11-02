@@ -1,0 +1,44 @@
+{
+  "currentWorkspace": 1,
+  "workspaces": [
+    {
+      "id": 0,
+      "title": "Workspace#0",
+      "layout_mode": "common",
+      "mode": "horizontal"
+    },
+    {
+      "id": 1,
+      "title": "マニュアル検証",
+      "layout_mode": "custom",
+      "mode": "horizontal"
+    }
+  ],
+  "tabs": [
+    {
+      "title": "マニュアル表示確認",
+      "location": "siki://wall/local/1/",
+      "skin": "manual_check",
+      "workspaceid": 1
+    }
+  ],
+  "shortcut": [
+    "control:focus.commandpallet",
+    "コマンドパレットを開く",
+    1,
+    false
+  ],
+  "skin": {
+    "key": "manual_check",
+    "label": "manual_check",
+    "bodyFontSize": 22
+  },
+  "checkedVersion": "0.99.25",
+  "environment": "Windows / Siki-dev / isolated manual verification profile",
+  "date": "2026-11-02",
+  "files": {
+    "session.json": "8a241d61aab6abbdaf112d8abcf8332ffe4357859d9fe58a478d4a02c62fe191",
+    "components/keymapping.js": "0078008eaaaa639e233995bc764467599989eacf1699c57f6e2b23e2ffcc1dbf",
+    "components/resskin.js": "2cb4991a8605bc832bea7cd9eb6b4395cd8331ecadca5c9e549eb10d686f626b"
+  }
+}
