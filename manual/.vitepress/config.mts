@@ -29,6 +29,7 @@ export default defineConfig({
       { text: '基本操作', link: '/basics/threads' },
       { text: '設定', link: '/customization/settings' },
       { text: '困ったとき', link: '/troubleshooting/' },
+      { text: '寄付', link: '/donate' },
       { text: '公式サイト', link: 'https://sikiapp.net/' }
     ],
     sidebar: [
@@ -272,6 +273,15 @@ export default defineConfig({
           {
             "text": "画像URLの補正",
             "link": "/reference/media-url-rules"
+          }
+        ]
+      },
+      {
+        "text": "開発支援",
+        "items": [
+          {
+            "text": "寄付・開発支援",
+            "link": "/donate"
           }
         ]
       }

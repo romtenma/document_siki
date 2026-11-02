@@ -41,7 +41,7 @@
 | M07 | `contact.md` | 既存公式ページへのリンク | 対象外 | 困ったときの連絡先は必要な位置から案内する |
 | M08 | `createthread.md` | `manual/basics/posting.md` | 統合 | 新規・継続スレッド、サイトごとの制限 |
 | M09 | `custom_css.md` | `manual/customization/css.md` | 書き直し | 現行DOM、適用範囲、解除方法 |
-| M10 | `donate.md` | 既存公式ページへのリンク | 対象外 | 寄付案内は公式サイト側を維持する |
+| M10 | `donate.md` | `manual/donate.md` | 書き直し | 2026-11-03の追加依頼で対象に変更。参照元のKo-fi・Amazonギフト券・Bitcoinの案内を掲載する |
 | M11 | `download.md` | 既存配布案内へのリンク | 対象外 | OS・配布形式の選び方だけ導入ページへ新たに説明する |
 | M12 | `faq.md` | `manual/troubleshooting/index.md`、`manual/troubleshooting/display.md`、関連する操作ページ | 統合 | 旧メニュー名と古い回避策を再検証する |
 | M13 | `image.md` | `manual/basics/media.md`、`manual/troubleshooting/media.md` | 書き直し | 新しいビューア・一覧・保存・ポップアップ |
