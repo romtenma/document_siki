@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="620" viewBox="0 0 640 620" role="img" aria-labelledby="title desc">
+  <title id="title">板とスレッドの配置の違い</title>
+  <desc id="desc">並列表示では板とスレッドを左右または上下に並べられ、配置交換で順番を入れ替えられます。単体表示では板かスレッドの片方を表示し、配置交換で表示対象を切り替えます。</desc>
+  <rect width="640" height="620" rx="16" fill="#f3f7fb"/>
+  <g font-family="sans-serif" fill="#19334c">
+    <text x="28" y="44" font-size="26" font-weight="700">板とスレッドの配置</text>
+    <text x="28" y="78" font-size="22">青：板のスレッド一覧　／　緑：レス本文</text>
+    <g font-size="23" font-weight="700">
+      <text x="28" y="124">左右に並べる</text>
+      <text x="336" y="124">上下に並べる</text>
+      <text x="28" y="368">並列で配置交換</text>
+      <text x="336" y="368">単体表示</text>
+    </g>
+    <g stroke="#cddce9" stroke-width="2">
+      <rect x="28" y="142" width="128" height="144" rx="8" fill="#e8f2ff"/>
+      <rect x="168" y="142" width="140" height="144" rx="8" fill="#e4f3ef"/>
+      <rect x="336" y="142" width="276" height="66" rx="8" fill="#e8f2ff"/>
+      <rect x="336" y="220" width="276" height="66" rx="8" fill="#e4f3ef"/>
+      <rect x="28" y="386" width="140" height="144" rx="8" fill="#e4f3ef"/>
+      <rect x="180" y="386" width="128" height="144" rx="8" fill="#e8f2ff"/>
+      <rect x="336" y="386" width="276" height="144" rx="8" fill="#e4f3ef"/>
+    </g>
+    <g font-size="24" text-anchor="middle">
+      <text x="92" y="223">板</text><text x="238" y="223">スレッド</text>
+      <text x="474" y="184">板</text><text x="474" y="262">スレッド</text>
+      <text x="98" y="467">スレッド</text><text x="244" y="467">板</text>
+      <text x="474" y="453">スレッド</text><text x="474" y="487" font-size="22">（または板）</text>
+    </g>
+    <g font-size="21">
+      <text x="28" y="319">「縦／横」で切り替え</text>
+      <text x="28" y="565">板とスレッドの順番を交換</text>
+      <text x="336" y="565">配置交換で表示対象を切り替え</text>
+    </g>
+    <text x="28" y="601" font-size="20" fill="#526a7e">領域の関係を示す図です。サイズやボタンは省略しています。</text>
+  </g>
+</svg>

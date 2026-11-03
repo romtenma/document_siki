@@ -94,6 +94,7 @@ GitHubの Settings → Pages → Build and deployment → Source で `GitHub Act
 | [試作の検証結果](planning/prototype-results.md) | 最初の代表3ページの試作記録 |
 | [先行原稿の整備結果](planning/core-guide-results.md) | 導入・基本操作の整備時点の記録 |
 | [詳細原稿の整備結果](planning/detail-guide-results.md) | 50ページの構成、参照資料の更新方法、確認範囲 |
+| [図・スクリーンショット候補](planning/visuals-needed.md) | 掲載箇所、優先度、必要な画面・図の内容 |
 | [ローカル操作の実機確認](planning/verification/local-operations.md) | キー・ワークスペース・スキン・ローカル板の保存と反映、再起動の確認 |
 
 `planning/` は編集・制作のための資料です。公開サイトのビルド対象は `manual/` のみです。当初の目次案の全50候補に加え、寄付・開発支援ページを掲載し、未作成ページへのリンクを置いていません。掲載原稿の操作確認は継続中です。
